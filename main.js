@@ -1,11 +1,8 @@
-const sayHello = require('./say-hello');
+import React from 'react';
+import ReactDom from 'react-dom';
 
-require('./css/main.scss');
+import App from './App';
 
-/*var imgElement = document.createElement('img');
+const root = document.getElementById('app');
 
-imgElement.src = require('./images/70143972_03.png');
-
-document.body.appendChild(imgElement);*/
-
-sayHello('Nicholay Kuropatkin', document.querySelector('h2'));
+ReactDom.render(<App/>, root);

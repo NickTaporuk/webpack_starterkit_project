@@ -17,7 +17,7 @@ webpack server run
 
 npm install modules for js loader
 ---------------------------------
-    npm install babel-loader babel-core babel-preset-es2015 babel-preset-react --save-dev
+    npm install babel-loader babel-core babel-preset-es2015 babel-preset-react babel-preset-stage-0 --save-dev
 
 npm install modules for css loader
 ----------------------------------
