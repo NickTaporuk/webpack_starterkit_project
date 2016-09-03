@@ -1,0 +1,39 @@
+{
+  "name": "webpack_starterkit_project",
+  "version": "1.0.0",
+  "description": "starterkit for webpack project",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NickTaporuk/webpack_starterkit_project.git"
+  },
+  "author": "Nicholay Kuropatkin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NickTaporuk/webpack_starterkit_project/issues"
+  },
+  "homepage": "https://github.com/NickTaporuk/webpack_starterkit_project#readme",
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "css-loader": "^0.24.0",
+    "jsx-loader": "^0.13.2",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-hot-loader": "^1.3.0",
+    "style-loader": "^0.13.1"
+  },
+  "dependencies": {
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "css-loader": "^0.24.0",
+    "node-sass": "^3.8.0",
+    "sass-loader": "^4.0.1",
+    "style-loader": "^0.13.1"
+  }
+}
