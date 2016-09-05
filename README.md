@@ -42,3 +42,8 @@ npm install modules for jsx
 npm install modules for hot loader jsx
 --------------------------------------
     npm install --save-dev react-hot-loader
+
+npm install preloader jshint
+----------------------------
+    npm install jshint -g
+    npm install jshint-loader 
