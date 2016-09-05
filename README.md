@@ -39,6 +39,10 @@ npm install modules for jsx
 ---------------------------
     npm install --save-dev jsx-loader
 
+npm install react-router
+------------------------
+    npm install --save react-router
+
 npm install modules for hot loader jsx
 --------------------------------------
     npm install --save-dev react-hot-loader

@@ -1,10 +1,11 @@
 // css minify
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var webpack = require('webpack');
 
 module.exports = {
-    // entry: './main.js',
-    entry: './jsx/index.jsx',
+    entry: './jsx/index.js',
     output: {
+        path: 'public',
         filename: 'bundle.js'
     },
     resolve: {
@@ -56,7 +57,12 @@ module.exports = {
     jshint: {
         esversion: 6
     },
-    plugins: [
+    /*plugins: [
         new ExtractTextPlugin("bundle.min.css")
-    ]
+    ]*/
+    plugins: process.env.NODE_ENV === 'production' ? [
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.optimize.UglifyJsPlugin()
+    ] : [],
 };
