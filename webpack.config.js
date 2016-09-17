@@ -6,7 +6,8 @@ var NpmInstallPlugin = require('npm-install-webpack-plugin');
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
     // entry: './jsx/index.js',
-    entry: './jsx/redux/src/index.js',
+    // entry: './jsx/redux/src/index.js',
+    entry: './jsx/todo_list_redux/index.js',
     output: {
         path: 'public',
         filename: 'bundle.js'
@@ -44,11 +45,6 @@ module.exports = {
                 test: /\.scss$/,
                 exclude: /node_modules/,
                 loader: 'style-loader!css-loader!postcss-loader'
-            },
-            {
-                test: /\.(jpg|png|gif)$/,
-                include: /images/,
-                loader: 'url'
             },
             {
                 test: /\.jsx$/,
