@@ -51,3 +51,37 @@ npm install preloader jshint
 ----------------------------
     npm install jshint -g
     npm install jshint-loader 
+
+npm install extract-text-webpack-plugin
+---------------------------------------
+    npm install extract-text-webpack-plugin --save
+
+npm install redux
+-----------------
+    npm install --save redux
+
+npm install react-redux
+-----------------------
+    link [react with redux](http://redux.js.org/docs/basics/UsageWithReact.html)
+    npm install --save react-redux
+    
+npm install redux-devtools
+--------------------------
+    npm install --save-dev redux-devtools
+    
+npm install react-polyfill
+--------------------------
+    https://maxfarseer.gitbooks.io/redux-course-ru/content/es2015,_react_hmr.html
+    npm install babel-polyfill --save
+
+Добавим в webpack возможность обрабатывать стили, заодно сразу накинув на них возможности autoprefixer'а
+--------------------------------------------------------------------------------------------------------
+    npm install style-loader css-loader postcss-loader autoprefixer precss --save-dev
+
+install redux-logger
+--------------------
+    npm i --save redux-logger
+
+install redux-thunk
+-------------------
+    npm install redux-thunk --save

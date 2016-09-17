@@ -1,9 +1,12 @@
 // css minify
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var webpack = require('webpack');
-
+var path = require('path');
+var NpmInstallPlugin = require('npm-install-webpack-plugin');
 module.exports = {
-    entry: './jsx/index.js',
+    devtool: 'cheap-module-eval-source-map',
+    // entry: './jsx/index.js',
+    entry: './jsx/redux/src/index.js',
     output: {
         path: 'public',
         filename: 'bundle.js'
@@ -40,7 +43,7 @@ module.exports = {
             {
                 test: /\.scss$/,
                 exclude: /node_modules/,
-                loader: 'style!css!sass'
+                loader: 'style-loader!css-loader!postcss-loader'
             },
             {
                 test: /\.(jpg|png|gif)$/,
@@ -54,15 +57,21 @@ module.exports = {
             }
         ],
     },
-    jshint: {
-        esversion: 6
+    postcss: function () {
+        return [autoprefixer, precss];
     },
-    /*plugins: [
-        new ExtractTextPlugin("bundle.min.css")
-    ]*/
+    jshint: {
+        "asi": true,
+        "esversion": 6
+    },
     plugins: process.env.NODE_ENV === 'production' ? [
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin()
-    ] : [],
+    ] : [
+        new NpmInstallPlugin(),
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.optimize.UglifyJsPlugin()
+    ],
 };
