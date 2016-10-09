@@ -7,7 +7,9 @@ module.exports = {
     devtool: 'cheap-module-eval-source-map',
     // entry: './jsx/index.js',
     // entry: './jsx/redux/src/index.js',
-    entry: './jsx/todo_list_redux/index.js',
+    // entry: './jsx/todo_list_redux/index.js',
+    // entry: './jsx/my_test_redux/index.js',
+    entry: './jsx/app/index.js',
     output: {
         path: 'public',
         filename: 'bundle.js'
@@ -20,13 +22,13 @@ module.exports = {
         port: 5000 ,
     },
     module: {
-        preLoaders: [
+        /*preLoaders: [
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'jshint'
             }
-        ],
+        ],*/
         loaders: [
             {
                 test: /\.js$/,

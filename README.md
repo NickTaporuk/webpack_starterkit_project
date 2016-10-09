@@ -85,3 +85,6 @@ install redux-logger
 install redux-thunk
 -------------------
     npm install redux-thunk --save
+install isomorphic-fetch
+------------------------
+    npm install --save isomorphic-fetch es6-promise
