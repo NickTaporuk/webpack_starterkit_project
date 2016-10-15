@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { render } from 'react-dom'
 require('es6-promise').polyfill();
 import fetch from 'isomorphic-fetch'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import MyAwesomeReactComponent from './MyAwesomeReactComponent';
 
 export default class App extends Component {
     constructor(props) {
@@ -11,7 +13,7 @@ export default class App extends Component {
 
     componentDidMount() {
 
-        fetch('http://www.lua_nginx.com/verify', {
+        /*fetch('http://www.lua_nginx.com/verify', {
             method: 'GET',
             mode: 'CORS'
         }).then(res => res.json())
@@ -19,14 +21,26 @@ export default class App extends Component {
                 this.setState({
                     token : data
                 })
-            }).catch(err => err);
+            }).catch(err => err);*/
+
+        fetch("http://www.lua_nginx.com/sign", {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
+                'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+            },
+            body: JSON.stringify({
+                email: 'foo',
+                pass: 'bar'
+            })
+        }).then(response => console.log('response:',response))
 
     }
 
     sendPost() {
-        fetch('http://www.lua_nginx.com/verify', {
-            method: 'GET',
-            mode: 'CORS'
+        fetch("http://www.lua_nginx.com/verify", {
+            method: "GET",
+            mode: "CORS"
         }).then(res => res.json())
             .then(data => {
                 this.setState({
@@ -37,12 +51,13 @@ export default class App extends Component {
     }
 
     render() {
-        console.log(this.state.token.signature);
-        let signature = this.state.token.signature;
-        let alg = this.state.token.header.alg;
-        let typ = this.state.token.header.typ;
+        let token = this.state.token;
+        // let id = token.id;
+        // let name = token.name;
+        // let password = token.password;
 
-        console.log('this.state.token.header:',this.state.token);
+        // console.log('this.state.token:',token);
+
         return (
             <div>
                 <h1>Hello, World!</h1>
@@ -50,21 +65,13 @@ export default class App extends Component {
                 <table className="table table-hover table-responsive">
                     <thead>
                         <tr>
-                            <th>signature</th>
-                            <th>algorithm</th>
-                            <th>type</th>
+                            <th>id</th>
+                            <th>name</th>
+                            <th>password</th>
                         </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>{signature}</td>
-                        <td>{alg}</td>
-                        <td>{typ}</td>
-                        <td>
-                            <a href="#" className="btn btn-default btn-sm" onClick={this.sendPost}>POST</a>
-                            <a href="#" className="btn btn-danger btn-sm">DELETE</a>
-                        </td>
-                    </tr>
+                    { /*allTokenData*/ }
 
                     {/*this.state.token && this.state.token.map(post => {
                         {console.log('post:', post)}

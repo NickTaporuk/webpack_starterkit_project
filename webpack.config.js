@@ -9,7 +9,8 @@ module.exports = {
     // entry: './jsx/redux/src/index.js',
     // entry: './jsx/todo_list_redux/index.js',
     // entry: './jsx/my_test_redux/index.js',
-    entry: './jsx/app/index.js',
+    // entry: './jsx/app/index.js',
+    entry: './jsx/redux_video/index.js',
     output: {
         path: 'public',
         filename: 'bundle.js'

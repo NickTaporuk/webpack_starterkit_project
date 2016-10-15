@@ -88,3 +88,7 @@ install redux-thunk
 install isomorphic-fetch
 ------------------------
     npm install --save isomorphic-fetch es6-promise
+    
+install react-tap-event-plugin
+------------------------
+    npm i --save react-tap-event-plugin
